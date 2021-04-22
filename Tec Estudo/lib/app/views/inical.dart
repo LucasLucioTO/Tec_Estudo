@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:teste/app/models/borda.dart';
 
 import 'Configurar.dart';
 import 'Perfil.dart';
 import 'cadastro.dart';
 import 'login.dart';
-import 'borda.dart';
+
 import 'video_aula.dart';
 import 'monitoria.dart';
 import 'exercicio.dart';

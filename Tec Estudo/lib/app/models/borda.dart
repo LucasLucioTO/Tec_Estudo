@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'video_aula.dart';
-import 'monitoria.dart';
-import 'exercicio.dart';
-import 'material.dart';
+
 
 class Borda {
   final Radius tl;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'login.dart';
+import 'views/login.dart';
 
 class Initial extends StatelessWidget {
   @override
