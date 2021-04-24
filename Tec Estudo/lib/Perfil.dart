@@ -13,24 +13,24 @@ class _PerfilState extends State<Perfil> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child: Column(
-            children: [
-              Text(
-                "Tec Estudo",
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 15),
+      title: Center(
+      child: Column(
+        children: [
+          Text(
+            "Tec Estudo",
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 15),
               ),
-              Text(
-                "Perfil",
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 22),
+          Text(
+            "Perfil",
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 22),
               ),
             ],
           ),
         ),
-        actions: [
-          BuildPopupMenuButton(),
+      actions: [
+        BuildPopupMenuButton(),
         ],
       ),
       body: Container(
@@ -55,14 +55,14 @@ class _PerfilState extends State<Perfil> {
           value: 1,
           child: Text("Configurações"),
         ),
-        PopupMenuItem(
+    PopupMenuItem(
           value: 2,
           child: Text("Sair"),
         ),
       ],
-      initialValue: 2,
-      onCanceled: () {
-        print("You have canceled the menu.");
+          initialValue: 2,
+          onCanceled: () {
+          print("You have canceled the menu.");
       },
       onSelected: (value) {
         if (value == 1) {
@@ -77,10 +77,10 @@ class _PerfilState extends State<Perfil> {
             context,
             MaterialPageRoute(
               builder: (context) => Login(),
-            ),
-          );
-        }
-      },
+              ),
+            );
+          }
+        },
       icon: Icon(Icons.list),
     );
   }
