@@ -1,8 +1,6 @@
 class Professor {
   final String nome;
-
-  Professor({this.nome});
+  final String materia;
+  Professor(this.nome, this.materia);
 }
 
-String nome2 = "Professor";
-const List<Professor> professores = const <Professor>[];
