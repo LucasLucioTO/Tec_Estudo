@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:teste/app/database/conexaoDB.dart';
+import 'package:teste/app/models/professor.dart';
 
 import 'inical.dart';
 import 'Cadastro.dart';
@@ -9,12 +10,6 @@ import 'Cadastro.dart';
 class Login extends StatefulWidget {
   @override
   _LoginState createState() => _LoginState();
-}
-
-Future<List<Map<String, dynamic>>> _buscar() async {
-
-  Database db = await ConexaoDB.get();
-  return db.query('tec_estudo');
 }
 
 class _LoginState extends State<Login> {
