@@ -10,7 +10,7 @@ final createTableAluno = """
     """;
 final insertAluno = """
       INSERT INTO aluno (nome, sobrenome, email, senha, nivel_acesso)
-      VALUES()
+      VALUES('','','','','')
     """;
 
 final createTableProfessor = """
@@ -26,5 +26,5 @@ final createTableProfessor = """
     """;
 final insertProfessor = """
       INSERT INTO professor (nome, sobrenome, email, senha, materia, nivel_acesso)
-      VALUES('','','','','')
+      VALUES('','','','','','')
     """;
