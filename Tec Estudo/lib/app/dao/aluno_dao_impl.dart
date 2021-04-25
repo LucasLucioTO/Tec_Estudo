@@ -8,13 +8,19 @@ class AlunoDAOimpl implements AlunoDAO {
 
   @override
   Future<List<Aluno>> find() async {
-    Database db = await ConexaoDB.get();
-    List<Map<String, dynamic>> resultado = await db.query('professor');
-    List<Aluno> listaAlunos = <Aluno>[];
-
-    for (var jsonPacote in resultado) {
-      listaAlunos.add(Aluno.fromMap(jsonPacote));
-    }
+    _db = await ConexaoDB.get();
+    List<Map<String, dynamic>> resultado = await _db.query('aluno');
+    List<Aluno> listaAlunos = List.generate(resultado.length,(i){
+      var linha = resultado[i];
+      return Aluno(
+        id :linha['id'],
+        nome : linha['nome'],
+        sobrenome : linha['sobrenome'],
+        email : linha['email'],
+        senha : linha['senha'],
+        nivel_acesso : linha['nivel_acesso']
+      );
+    });
     return listaAlunos;
   }
 

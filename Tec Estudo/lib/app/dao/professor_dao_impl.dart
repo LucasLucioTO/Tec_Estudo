@@ -10,11 +10,18 @@ class ProfessorDAOimpl implements ProfessorDAO {
   Future<List<Professor>> find() async {
     Database db = await ConexaoDB.get();
     List<Map<String, dynamic>> resultado = await db.query('professor');
-    List<Professor> listaProfessores = <Professor>[];
-
-    for (var jsonPacote in resultado) {
-      listaProfessores.add(Professor.fromMap(jsonPacote));
-    }
+    List<Professor> listaProfessores = List.generate(resultado.length,(i){
+      var linha = resultado[i];
+      return Professor(
+        id :linha['id'],
+        nome : linha['nome'],
+        sobrenome : linha['sobrenome'],
+        email : linha['email'],
+        senha : linha['senha'],
+        materia: linha['materia'],
+        nivel_acesso : linha['nivel_acesso']
+      );
+    });
     return listaProfessores;
   }
 

@@ -5,8 +5,8 @@ class Aluno {
   String email;
   String senha;
   String nivel_acesso;
-  Aluno(this.id, this.nome, this.sobrenome, this.email, this.senha,
-      this.nivel_acesso);
+  Aluno({this.id, this.nome, this.sobrenome, this.email, this.senha,
+      this.nivel_acesso});
 
   Map<String, dynamic> toMap() {
     var map = <String, dynamic>{

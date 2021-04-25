@@ -6,8 +6,14 @@ class Professor {
   String senha;
   String materia;
   String nivel_acesso;
-  Professor(this.id, this.nome, this.sobrenome, this.email, this.senha,
-      this.materia, this.nivel_acesso);
+  Professor(
+      {this.id,
+      this.nome,
+      this.sobrenome,
+      this.email,
+      this.senha,
+      this.materia,
+      this.nivel_acesso});
 
   Map<String, dynamic> toMap() {
     var map = <String, dynamic>{
