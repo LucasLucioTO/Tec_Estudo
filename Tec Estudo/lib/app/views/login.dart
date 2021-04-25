@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:path/path.dart';
-import 'package:sqflite/sqflite.dart';
-import 'package:teste/app/database/conexaoDB.dart';
-import 'package:teste/app/models/professor.dart';
+import 'package:teste/app/database/dao/aluno_dao_impl.dart';
+import 'package:teste/app/database/dao/professor_dao_impl.dart';
+import 'package:teste/app/domain/models/aluno.dart';
+import 'package:teste/app/domain/models/professor.dart';
 
 import 'inical.dart';
 import 'Cadastro.dart';
@@ -10,6 +10,14 @@ import 'Cadastro.dart';
 class Login extends StatefulWidget {
   @override
   _LoginState createState() => _LoginState();
+}
+
+Future<List<Aluno>> _buscarAlunos()async{
+  return AlunoDAOimpl().find();
+}
+
+Future<List<Professor>> _buscarProfessor()async{
+  return ProfessorDAOimpl().find();
 }
 
 class _LoginState extends State<Login> {

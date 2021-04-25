@@ -1,7 +1,7 @@
 import 'package:sqflite/sqflite.dart';
 import 'package:teste/app/database/conexaoDB.dart';
 import 'package:teste/app/domain/interfaces/aluno_dao.dart';
-import 'package:teste/app/models/aluno.dart';
+import 'package:teste/app/domain/models/aluno.dart';
 
 class AlunoDAOimpl implements AlunoDAO {
   Database _db;

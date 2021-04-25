@@ -1,9 +1,7 @@
-import 'package:teste/app/models/professor.dart';
+import 'package:teste/app/domain/models/professor.dart';
 
-abstract class ProfessorDAO{
-
+abstract class ProfessorDAO {
   save(Professor professor);
 
-  Future<List<Professor>>find();
-
+  Future<List<Professor>> find();
 }

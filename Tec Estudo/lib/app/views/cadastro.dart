@@ -3,7 +3,15 @@ import 'package:flutter/material.dart';
 import 'inical.dart';
 import 'login.dart';
 
-class Cadastro extends StatelessWidget {
+class Cadastro extends StatefulWidget {
+  @override
+  _CadastroState createState() => _CadastroState();
+}
+
+class _CadastroState extends State<Cadastro> {
+  final _formKey = GlobalKey<FormState>();
+  bool _secureText = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

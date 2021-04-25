@@ -1,11 +1,7 @@
+import 'package:teste/app/domain/models/aluno.dart';
 
-
-import 'package:teste/app/models/aluno.dart';
-
-abstract class AlunoDAO{
-
+abstract class AlunoDAO {
   save(Aluno aluno);
 
-  Future<List<Aluno>>find();
-
+  Future<List<Aluno>> find();
 }
