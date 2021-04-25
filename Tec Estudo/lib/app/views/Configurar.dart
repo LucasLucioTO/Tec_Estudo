@@ -13,24 +13,24 @@ class _ConfigurarState extends State<Configurar> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child: Column(
-            children: [
-              Text(
-                "Tec Estudo",
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 15),
+      title: Center(
+      child: Column(
+        children: [
+          Text(
+            "Tec Estudo",
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 15),
               ),
-              Text(
-                "Configuração",
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 22),
+          Text(
+            "Configuração",
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 22),
               ),
             ],
           ),
         ),
-        actions: [
-          BuildPopupMenuButton(),
+      actions: [
+        BuildPopupMenuButton(),
         ],
       ),
       body: Container(
@@ -59,9 +59,9 @@ class _ConfigurarState extends State<Configurar> {
           child: Text("Sair"),
         ),
       ],
-      initialValue: 2,
-      onCanceled: () {
-        print("You have canceled the menu.");
+          initialValue: 2,
+          onCanceled: () {
+          print("You have canceled the menu.");
       },
       onSelected: (value) {
         if (value == 1) {
@@ -76,10 +76,10 @@ class _ConfigurarState extends State<Configurar> {
             context,
             MaterialPageRoute(
               builder: (context) => Login(),
-            ),
-          );
-        }
-      },
+              ),
+            );
+          }
+        },
       icon: Icon(Icons.list),
     );
   }
