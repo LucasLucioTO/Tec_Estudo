@@ -1,4 +1,4 @@
-import 'package:teste/app/domain/models/professor.dart';
+import 'package:teste/app/domain/entities/professor.dart';
 
 abstract class ProfessorDAO {
   save(Professor professor);

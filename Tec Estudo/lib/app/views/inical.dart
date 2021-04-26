@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:teste/app/domain/models/borda.dart';
+import 'package:teste/app/domain/entities/borda.dart';
 
 import 'Configurar.dart';
 import 'Perfil.dart';

@@ -1,4 +1,4 @@
-import 'package:teste/app/domain/models/aluno.dart';
+import 'package:teste/app/domain/entities/aluno.dart';
 
 abstract class AlunoDAO {
   save(Aluno aluno);

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:teste/app/database/dao/aluno_dao_impl.dart';
 import 'package:teste/app/database/dao/professor_dao_impl.dart';
-import 'package:teste/app/domain/models/aluno.dart';
-import 'package:teste/app/domain/models/professor.dart';
+import 'package:teste/app/domain/entities/aluno.dart';
+import 'package:teste/app/domain/entities/professor.dart';
 
 import 'inical.dart';
 import 'Cadastro.dart';

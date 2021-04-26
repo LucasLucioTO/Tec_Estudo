@@ -1,7 +1,7 @@
 import 'package:sqflite/sqflite.dart';
 import 'package:teste/app/database/conexaoDB.dart';
 import 'package:teste/app/domain/interfaces/professor_dao.dart';
-import 'package:teste/app/domain/models/professor.dart';
+import 'package:teste/app/domain/entities/professor.dart';
 
 class ProfessorDAOimpl implements ProfessorDAO {
   Database _db;
