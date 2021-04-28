@@ -10,16 +10,16 @@ class AlunoDAOimpl implements AlunoDAO {
   Future<List<Aluno>> find() async {
     _db = await ConexaoDB.get();
     List<Map<String, dynamic>> resultado = await _db.query('aluno');
-    List<Aluno> listaAlunos = List.generate(resultado.length,(i){
+    List<Aluno> listaAlunos = List.generate(resultado.length, (i) {
       var linha = resultado[i];
       return Aluno(
-        id :linha['id'],
-        nome : linha['nome'],
-        sobrenome : linha['sobrenome'],
-        email : linha['email'],
-        senha : linha['senha'],
-        nivel_acesso : linha['nivel_acesso']
-      );
+          id: linha['id'],
+          login: linha['login'],
+          nome: linha['nome'],
+          sobrenome: linha['sobrenome'],
+          email: linha['email'],
+          senha: linha['senha'],
+          nivel_acesso: linha['nivel_acesso']);
     });
     return listaAlunos;
   }
@@ -30,25 +30,18 @@ class AlunoDAOimpl implements AlunoDAO {
     var sql;
     if (aluno.id == null) {
       sql =
-          'INSERT INTO aluno(nome, sobrenome, email, senha, nivel_acesso) VALUES(?,?,?,?,?)';
+          'INSERT INTO aluno(login, nome, sobrenome, email, senha, nivel_acesso) VALUES(?,?,?,?,?,?)';
       _db.rawInsert(sql, [
         aluno.nome,
+        aluno.login,
         aluno.sobrenome,
         aluno.email,
         aluno.senha,
         aluno.nivel_acesso
       ]);
     } else {
-      sql =
-          'UPDATE aluno SET nome = ?, sobrenome = ?, email = ?, senha = ?, nivel_acesso = ? WHERE id = ?';
-      _db.rawUpdate(sql, [
-        aluno.nome,
-        aluno.sobrenome,
-        aluno.email,
-        aluno.senha,
-        aluno.nivel_acesso,
-        aluno.id
-      ]);
+      sql = 'UPDATE aluno SET  senha = ? WHERE id = ?';
+      _db.rawUpdate(sql, [aluno.senha, aluno.id]);
     }
   }
 }

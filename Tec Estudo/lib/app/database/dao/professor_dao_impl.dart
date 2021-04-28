@@ -10,17 +10,17 @@ class ProfessorDAOimpl implements ProfessorDAO {
   Future<List<Professor>> find() async {
     Database db = await ConexaoDB.get();
     List<Map<String, dynamic>> resultado = await db.query('professor');
-    List<Professor> listaProfessores = List.generate(resultado.length,(i){
+    List<Professor> listaProfessores = List.generate(resultado.length, (i) {
       var linha = resultado[i];
       return Professor(
-        id :linha['id'],
-        nome : linha['nome'],
-        sobrenome : linha['sobrenome'],
-        email : linha['email'],
-        senha : linha['senha'],
-        materia: linha['materia'],
-        nivel_acesso : linha['nivel_acesso']
-      );
+          id: linha['id'],
+          login: linha['login'],
+          nome: linha['nome'],
+          sobrenome: linha['sobrenome'],
+          email: linha['email'],
+          senha: linha['senha'],
+          materia: linha['materia'],
+          nivel_acesso: linha['nivel_acesso']);
     });
     return listaProfessores;
   }
@@ -31,9 +31,10 @@ class ProfessorDAOimpl implements ProfessorDAO {
     var sql;
     if (professor.id == null) {
       sql =
-          'INSERT INTO profesor(nome, sobrenome, email, senha, materia, nivel_acesso) VALUES(?,?,?,?,?,?)';
+          'INSERT INTO profesor(login, nome, sobrenome, email, senha, materia, nivel_acesso) VALUES(?,?,?,?,?,?)';
       _db.rawInsert(sql, [
         professor.nome,
+        professor.login,
         professor.sobrenome,
         professor.email,
         professor.senha,
@@ -41,17 +42,8 @@ class ProfessorDAOimpl implements ProfessorDAO {
         professor.nivel_acesso
       ]);
     } else {
-      sql =
-          'UPDATE professor SET nome = ?, sobrenome = ?, email = ?, senha = ?, materia = ?, nivel_acesso = ? WHERE id = ?';
-      _db.rawUpdate(sql, [
-        professor.nome,
-        professor.sobrenome,
-        professor.email,
-        professor.senha,
-        professor.materia,
-        professor.nivel_acesso,
-        professor.id
-      ]);
+      sql = 'UPDATE professor SET senha = ? WHERE id = ?';
+      _db.rawUpdate(sql, [professor.senha, professor.id]);
     }
   }
 }
