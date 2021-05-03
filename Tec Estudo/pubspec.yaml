@@ -29,6 +29,8 @@ dependencies:
   cupertino_icons: ^1.0.0
   sqflite:
   path:
+  http:
+  google_maps_flutter:
 
 dev_dependencies:
   flutter_test:

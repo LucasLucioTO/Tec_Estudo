@@ -1,6 +1,7 @@
-import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
+import 'package:sqflite/sqflite.dart';
 import 'package:teste/app/database/script.dart';
+
 
 class ConexaoDB {
   static Database _db;

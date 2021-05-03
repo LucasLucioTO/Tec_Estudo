@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:teste/app/domain/entities/borda.dart';
+import 'package:teste/app/controller/components/borda.dart';
 
 import 'Configurar.dart';
 import 'Perfil.dart';
 import 'cadastro.dart';
 import 'login.dart';
 
+import 'map.page.dart';
 import 'video_aula.dart';
 import 'monitoria.dart';
 import 'exercicio.dart';
@@ -75,6 +76,10 @@ class _InicialState extends State<Inicial> {
           value: 3,
           child: Text("Sair"),
         ),
+        PopupMenuItem(
+          value: 4,
+          child: Text("Mapa"),
+        ),
       ],
       onCanceled: () {
         print("You have canceled the menu.");
@@ -99,6 +104,13 @@ class _InicialState extends State<Inicial> {
             context,
             MaterialPageRoute(
               builder: (context) => Login(),
+            ),
+          );
+        } else if (value == 4) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => MapPage(),
             ),
           );
         }

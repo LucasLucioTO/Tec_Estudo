@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 
-
-
 class Borda {
   final Radius tl;
   final Radius tr;
   final Radius bl;
   final Radius br;
-  
+
   const Borda({
     this.tl,
     this.tr,
