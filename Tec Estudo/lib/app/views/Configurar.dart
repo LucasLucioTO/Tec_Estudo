@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'Perfil.dart';
 import 'login.dart';
+import 'map.page.dart';
 
 class Configurar extends StatefulWidget {
   @override
@@ -60,6 +61,10 @@ class _ConfigurarState extends State<Configurar> {
           value: 2,
           child: Text("Sair"),
         ),
+        PopupMenuItem(
+          value: 3,
+          child: Text("Mapa"),
+        ),
       ],
           initialValue: 2,
           onCanceled: () {
@@ -80,7 +85,15 @@ class _ConfigurarState extends State<Configurar> {
               builder: (context) => Login(),
               ),
             );
-          }
+          }else if (value == 3) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => MapPage(),
+            ),
+          );
+        }
+          
         },
       icon: Icon(Icons.list),
     );

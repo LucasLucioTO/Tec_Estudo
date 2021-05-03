@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'Configurar.dart';
 import 'Perfil.dart';
 import 'login.dart';
+import 'map.page.dart';
 
 class Monitoria extends StatefulWidget {
   @override
@@ -86,18 +87,25 @@ class _MonitoriaState extends State<Monitoria> {
   }
 
   PopupMenuButton<int> BuildPopupMenuButton() {
-    return PopupMenuButton(
+    return PopupMenuButton<int>(
       itemBuilder: (context) => [
         PopupMenuItem(
           value: 1,
-          child: Text("First"),
+          child: Text("Perfil"),
         ),
         PopupMenuItem(
           value: 2,
-          child: Text("Second"),
+          child: Text("Configuração"),
+        ),
+        PopupMenuItem(
+          value: 3,
+          child: Text("Sair"),
+        ),
+        PopupMenuItem(
+          value: 4,
+          child: Text("Mapa"),
         ),
       ],
-      initialValue: 2,
       onCanceled: () {
         print("You have canceled the menu.");
       },
@@ -121,6 +129,13 @@ class _MonitoriaState extends State<Monitoria> {
             context,
             MaterialPageRoute(
               builder: (context) => Login(),
+            ),
+          );
+        } else if (value == 4) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => MapPage(),
             ),
           );
         }
